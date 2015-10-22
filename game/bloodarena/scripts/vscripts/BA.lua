@@ -1,10 +1,10 @@
 
-numberOfResp = 0
-heroDie = 0
+--numberOfResp = 0
+--heroDie = 0
 resolution = 0
 xp = 10
 gold = 10
-nextTimer = 30
+
 playerBG1 = nil
 playerBG2 = nil
 playerBG3 = nil
@@ -57,7 +57,7 @@ print("------------------------------------game start---------------------------
 --   Say(nil, "game start", false)
 
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(BA, 'OnGameRulesStateChange'), self)
-	ListenToGameEvent('npc_spawned', Dynamic_Wrap(BA, 'OnNPCSpawned'), self)	
+--	ListenToGameEvent('npc_spawned', Dynamic_Wrap(BA, 'OnNPCSpawned'), self)	
     ListenToGameEvent('entity_killed', Dynamic_Wrap(BA, 'OnEntityKilled'), self)
 	ListenToGameEvent("dota_player_killed", Dynamic_Wrap(BA, "OnHeroKilled"), self)
 	
@@ -590,7 +590,7 @@ function BA:OnHeroKilled (data)
     local nameHero = BA:GiveNameHero( PlayerResource:GetSelectedHeroName(data.PlayerID) )
 	GameRules:SendCustomMessage("<font color='#58ACFA'>Gladiator " .. nameHero .. " die!</font>", 0, 0)
   
-	heroDie = 1
+	--heroDie = 1
 	
 end
 
@@ -602,7 +602,7 @@ function BA:CreateDrop (itemName, pos)
    newItem:LaunchLoot(false, 300, 0.75, pos + RandomVector(RandomFloat(50, 350)))
 end 
   
- 
+ --[[
 function BA:OnNPCSpawned(data)
 
 
@@ -633,13 +633,13 @@ local npc = EntIndexToHScript(data.entindex)
 
 	end
 end
-
-
+]]
+--[[
 function BA:SetExpnGold(data, xp, gold)
 data:AddExperience(xp,false,false)
 data:SetGold(gold, true)
 end
-
+]]
 
 function BA:GiveNameHero(data)
 local name = ""
@@ -709,7 +709,7 @@ end
 return name
 end
 
-
+--[[
 function BA:ReplaceHero(id)
 			
 	heroDie = 0	
@@ -762,7 +762,7 @@ function BA:ReplaceHero(id)
 
 
 end
-
+]]
 
 function BA:PlusParticle(number, color, duration, caster)
   POPUP_SYMBOL_PRE_PLUS = 0 -- This makes the + on the message particle

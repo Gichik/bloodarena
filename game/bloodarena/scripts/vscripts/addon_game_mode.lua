@@ -31,7 +31,7 @@ PrecacheModel("models/heroes/earth_spirit/stonesummon.vmdl", context)
 
 PrecacheForHero("npc_dota_hero_ursa",pathToIG,context)
 
-
+--[[
 PrecacheForHero("npc_dota_hero_abaddon",pathToIG,context)
 PrecacheForHero("npc_dota_hero_alchemist",pathToIG,context)
 PrecacheForHero("npc_dota_hero_axe",pathToIG,context)
@@ -62,7 +62,7 @@ PrecacheForHero("npc_dota_hero_tiny",pathToIG,context)
 PrecacheForHero("npc_dota_hero_treant",pathToIG,context)
 PrecacheForHero("npc_dota_hero_tusk",pathToIG,context)
 PrecacheForHero("npc_dota_hero_skeleton_king",pathToIG,context)
-
+]]
 
 --[[
 PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
