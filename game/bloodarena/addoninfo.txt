@@ -1,0 +1,13 @@
+"AddonInfo"
+
+{
+
+	"TeamCount"  "2"
+	"maps"  "blood_arena"
+	"IsPlayable" "1"
+	"blood_arena"
+ 	{
+  		"MaxPlayers" "6"
+ 	}
+
+}

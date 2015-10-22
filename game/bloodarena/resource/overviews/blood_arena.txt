@@ -1,0 +1,8 @@
+blood_arena
+{
+	material materials/overviews/blood_arena.vmat
+	pos_x -5888
+	pos_y 6528
+	scale 12.000
+}
+

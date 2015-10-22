@@ -1,0 +1,100 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+"gold_attacker" //название способности
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             "ability_datadriven" 
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE" //пассивка, снизу есть список, какие бывают поведения у способности
+		"AbilityTextureName"    "alchemist_goblins_greed" //иконка
+	 
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers" //параметры
+		{
+			"gold_attacker_modifier" //название параметра, он прицепляет эффект
+			{
+				"Passive" "1" //пассивный параметр
+				"OnAttacked" //событие: когда этот параметр приходит в действие:
+				{
+					"RunScript"
+					{
+					  "ScriptFile"      "modifiers.lua"
+					  "Function"        "GiveGold"
+					}
+				}
+			}
+		}
+	}	
+	
+"exp_attacker" //название способности
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             "ability_datadriven" 
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE" //пассивка, снизу есть список, какие бывают поведения у способности
+		"AbilityTextureName"    "witch_doctor_voodoo_restoration" //иконка
+	 
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers" //параметры
+		{
+			"exp_attacker_modifier" //название параметра, он прицепляет эффект
+			{
+				"Passive" "1" //пассивный параметр
+				"OnAttacked" //событие: когда этот параметр приходит в действие:
+				{
+					"RunScript"
+					{
+					  "ScriptFile"      "modifiers.lua"
+					  "Function"        "GiveExp"
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+	//=================================================================================================================
+	// Spectre: Dispersion
+	//=================================================================================================================
+	"sturdiness"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"spectre_dispersion"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"    		"centaur_return" //иконка
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reflection_pct"	"100 100 100 100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_radius"			"300 300 300 300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_radius"			"600 600 600 600"
+			}			
+		}
+	}
+
+
+
+		
+}
