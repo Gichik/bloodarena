@@ -4,12 +4,11 @@
 if BA == nil then
 	_G.BA = class({})
 	print("BA beta")
-	--Convar:SendToConsole("sv_cheats 1")
 end
 
 require( 'BA' )
 require( 'timers' )
---require( 'barebones' )
+
 
 
 function Precache( context )
@@ -23,13 +22,17 @@ function Precache( context )
 print("----------------------------------------PRECACHE----------------------------------------")
 
 
---PrecacheModel("models/heroes/lifestealer/lifestealer.vmdl", context)
-
 local pathToIG = LoadKeyValues("scripts/items/items_game.txt") -- загружаем весь файл
+
 PrecacheModel("models/props_debris/wood_fence001g.vmdl", context)
 PrecacheModel("models/heroes/earth_spirit/stonesummon.vmdl", context)
 
-PrecacheForHero("npc_dota_hero_ursa",pathToIG,context)
+PrecacheModel("models/heroes/ursa/ursa.vmdl", context)
+PrecacheModel("models/heroes/beastmaster/beastmaster.vmdl", context)
+
+PrecacheResource( "particle_folder", "particles/units/heroes/hero_ursa", context )
+PrecacheResource( "particle_folder", "particles/units/heroes/hero_enchantress", context )
+
 
 --[[
 PrecacheForHero("npc_dota_hero_abaddon",pathToIG,context)
@@ -102,7 +105,7 @@ PrecacheUnitByNameSync("npc_dota_hero_skeleton_king", context)
 	
 end
 
--- Create the game mode when we activate
+
 function Activate()
 	BA:InitGameMode()
 end

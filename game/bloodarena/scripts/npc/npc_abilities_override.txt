@@ -56,16 +56,299 @@
 		"ItemDroppable"					"0"
 	}
 
+	"item_manta"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}	
+	
+	"item_necronomicon"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}	
+
+	"item_necronomicon_2"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}	
+	
+	"item_necronomicon_3"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}	
+
+
+	"item_shadow_amulet"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}	
+	
+	"item_talisman_of_evasion"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}	
+
+	"item_vitality_booster"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}	
+
+	"item_energy_booster"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}	
+
+	"item_point_booster"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_soul_booster"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_ultimate_orb"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_mystic_staff"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_hyperstone"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}	
+
+	"item_eagle"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}		
+
+	"item_quelling_blade"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}		
+
+	"item_relic"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}	
+
+	"item_demon_edge"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}	
+
+	"item_reaver"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}	
+
+	
+	//=================================================================================================================
+	// recipe
+	//=================================================================================================================
+
+	"item_recipe_necronomicon"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}
+	
+	"item_recipe_necronomicon_2"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}
+
+	"item_recipe_necronomicon_3"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}
+	
+	"item_recipe_veil_of_discord"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_dagon"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_recipe_cyclone"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_refresher"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_recipe_orchid"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_hand_of_midas"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_recipe_lesser_crit"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_basher"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
 	"item_recipe_manta"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"0"
 	}
 
-	"item_manta"
+	"item_recipe_silver_edge"
 	{
 		"ItemPurchasable"				"0"
-		"ItemDroppable"					"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_recipe_sange"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
 	}
 
+	"item_recipe_yasha"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_recipe_radiance"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_greater_crit"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_crimson_guard"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_black_king_bar"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_recipe_lotus_orb"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_shivas_guard"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_recipe_bloodstone"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_sphere"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_assault"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_heart"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_maelstrom"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_diffusal_blade"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_desolator"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_recipe_mjollnir"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_recipe_satanic"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+		
+	
 }

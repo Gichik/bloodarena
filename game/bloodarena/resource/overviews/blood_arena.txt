@@ -2,7 +2,7 @@ blood_arena
 {
 	material materials/overviews/blood_arena.vmat
 	pos_x -5888
-	pos_y 6528
+	pos_y 8704
 	scale 12.000
 }
 

@@ -53,6 +53,9 @@ function BA:InitGameMode()
 	GameRules:GetGameModeEntity():SetBuybackEnabled( false )
 	GameRules:GetGameModeEntity():SetRecommendedItemsDisabled( true )	
 
+	GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
+	
+	
 print("------------------------------------game start----------------------------------------")	
 --   Say(nil, "game start", false)
 
@@ -77,34 +80,42 @@ print("------------------------------------game start---------------------------
 		
 	local pointDireExp1 = Entities:FindByName( nil, "spawnDirExp1"):GetAbsOrigin()
 	local pointDireExp2 = Entities:FindByName( nil, "spawnDirExp2"):GetAbsOrigin()
-	local pointDireExp3 = Entities:FindByName( nil, "spawnDirExp3"):GetAbsOrigin()
+	--local pointDireExp3 = Entities:FindByName( nil, "spawnDirExp3"):GetAbsOrigin()
 
 	local pointDireGold1 = Entities:FindByName( nil, "spawnDirGold1"):GetAbsOrigin()
 	local pointDireGold2 = Entities:FindByName( nil, "spawnDirGold2"):GetAbsOrigin()
-	local pointDireGold3 = Entities:FindByName( nil, "spawnDirGold3"):GetAbsOrigin()
+	--local pointDireGold3 = Entities:FindByName( nil, "spawnDirGold3"):GetAbsOrigin()
 
 	local pointRadExp1 = Entities:FindByName( nil, "spawnRadExp1"):GetAbsOrigin()
 	local pointRadExp2 = Entities:FindByName( nil, "spawnRadExp2"):GetAbsOrigin()
-	local pointRadExp3 = Entities:FindByName( nil, "spawnRadExp3"):GetAbsOrigin()
+	--local pointRadExp3 = Entities:FindByName( nil, "spawnRadExp3"):GetAbsOrigin()
 
 	local pointRadGold1 = Entities:FindByName( nil, "spawnRadGold1"):GetAbsOrigin()
 	local pointRadGold2 = Entities:FindByName( nil, "spawnRadGold2"):GetAbsOrigin()
-	local pointRadGold3 = Entities:FindByName( nil, "spawnRadGold3"):GetAbsOrigin()
+	--local pointRadGold3 = Entities:FindByName( nil, "spawnRadGold3"):GetAbsOrigin()
 
 
 	local DireExp1 = CreateUnitByName("unit_giver_of_exp", pointDireExp1, true, nil, nil, DOTA_TEAM_NEUTRALS ) 
 	local DireExp2 = CreateUnitByName("unit_giver_of_exp_two", pointDireExp2, true, nil, nil, DOTA_TEAM_NEUTRALS ) 
-	local DireExp3 = CreateUnitByName("dire_urs_exp", pointDireExp3, true, nil, nil, DOTA_TEAM_NEUTRALS ) 
+	--local DireExp3 = CreateUnitByName("dire_urs_exp", pointDireExp3, true, nil, nil, DOTA_TEAM_NEUTRALS ) 
 	local DireGold1 = CreateUnitByName("unit_giver_of_gold", pointDireGold1, true, nil, nil, DOTA_TEAM_NEUTRALS ) 
 	local DireGold2 = CreateUnitByName("unit_giver_of_gold_two", pointDireGold2, true, nil, nil, DOTA_TEAM_NEUTRALS )
-	local DireGold3 = CreateUnitByName("dire_urs_gold", pointDireGold3, true, nil, nil, DOTA_TEAM_NEUTRALS )
+	--local DireGold3 = CreateUnitByName("dire_urs_gold", pointDireGold3, true, nil, nil, DOTA_TEAM_NEUTRALS )
 
 	local RadExp1 = CreateUnitByName("unit_giver_of_exp", pointRadExp1, true, nil, nil, DOTA_TEAM_NEUTRALS ) 
 	local RadExp2 = CreateUnitByName("unit_giver_of_exp_two", pointRadExp2, true, nil, nil, DOTA_TEAM_NEUTRALS )
-	local RadExp3 = CreateUnitByName("rad_urs_exp", pointRadExp3, true, nil, nil, DOTA_TEAM_NEUTRALS )  
+	--local RadExp3 = CreateUnitByName("rad_urs_exp", pointRadExp3, true, nil, nil, DOTA_TEAM_NEUTRALS )  
 	local RadGold1 = CreateUnitByName("unit_giver_of_gold", pointRadGold1, true, nil, nil, DOTA_TEAM_NEUTRALS ) 
 	local RadGold2 = CreateUnitByName("unit_giver_of_gold_two", pointRadGold2, true, nil, nil, DOTA_TEAM_NEUTRALS )
-	local RadGold3 = CreateUnitByName("rad_urs_gold", pointRadGold3, true, nil, nil, DOTA_TEAM_NEUTRALS )
+	--local RadGold3 = CreateUnitByName("rad_urs_gold", pointRadGold3, true, nil, nil, DOTA_TEAM_NEUTRALS )
+	
+	local pointDireTrainer = Entities:FindByName( nil, "spawnDireTrainer"):GetAbsOrigin()
+	local pointRadTrainer = Entities:FindByName( nil, "spawnRadTrainer"):GetAbsOrigin()
+	local pointBossUrsa = Entities:FindByName( nil, "spawnBoss"):GetAbsOrigin()
+	
+	local DireTrainer = CreateUnitByName("dire_trainer", pointDireTrainer, true, nil, nil, DOTA_TEAM_NEUTRALS )	
+	local RadTrainer = CreateUnitByName("radiante_trainer", pointRadTrainer, true, nil, nil, DOTA_TEAM_NEUTRALS ) 
+	local BossUrsa = CreateUnitByName("champion_ursa", pointBossUrsa, true, nil, nil, DOTA_TEAM_NEUTRALS )	
 	
 end
 
@@ -535,25 +546,37 @@ end
 
 function BA:OnEntityKilled (data)
     local killedUnit = EntIndexToHScript( data.entindex_killed )
-    if killedUnit:GetUnitName() == "rad_urs_gold" then
-		local point1 = Entities:FindByName( nil, "spawnRadGold3"):GetAbsOrigin()
-		local unit1 = CreateUnitByName("rad_urs_gold", point1, true, nil, nil, DOTA_TEAM_NEUTRALS )      
+	
+	if killedUnit:IsNeutralUnitType() or killedUnit:IsCreature() then
+        BA:RollDrops(killedUnit)
+    end
+			
+    if killedUnit:GetUnitName() == "dire_trainer" then
+		Timers:CreateTimer(60, function()
+		local point1 = Entities:FindByName( nil, "spawnDireTrainer"):GetAbsOrigin()
+		local unit1 = CreateUnitByName("dire_trainer", point1, true, nil, nil, DOTA_TEAM_NEUTRALS )  
+		end)		
     end
 	
-    if killedUnit:GetUnitName() == "rad_urs_exp" then
-		local point1 = Entities:FindByName( nil, "spawnRadExp3"):GetAbsOrigin()
-		local unit1 = CreateUnitByName("rad_urs_exp", point1, true, nil, nil, DOTA_TEAM_NEUTRALS )      
+    if killedUnit:GetUnitName() == "radiante_trainer" then
+		Timers:CreateTimer(60, function()
+		local point1 = Entities:FindByName( nil, "spawnRadTrainer"):GetAbsOrigin()
+		local unit1 = CreateUnitByName("radiante_trainer", point1, true, nil, nil, DOTA_TEAM_NEUTRALS )  
+		end)		
     end
 
-    if killedUnit:GetUnitName() == "dire_urs_gold" then
-		local point1 = Entities:FindByName( nil, "spawnDirGold3"):GetAbsOrigin()
-		local unit1 = CreateUnitByName("dire_urs_gold", point1, true, nil, nil, DOTA_TEAM_NEUTRALS )      
+    if killedUnit:GetUnitName() == "champion_ursa" then
+		local killer = EntIndexToHScript( data.entindex_attacker )
+		local nameHero = BA:GiveNameHero( killer:GetName() )
+		local messageinfo = { message = "Champion URSA was defeated by " .. nameHero .. "!" , duration = 5}
+		FireGameEvent("show_center_message",messageinfo) 
+		Timers:CreateTimer(120, function()
+		local point1 = Entities:FindByName( nil, "spawnBoss"):GetAbsOrigin()
+		local unit1 = CreateUnitByName("champion_ursa", point1, true, nil, nil, DOTA_TEAM_NEUTRALS )  
+		end)		
     end
 
-    if killedUnit:GetUnitName() == "dire_urs_exp" then
-		local point1 = Entities:FindByName( nil, "spawnDirExp3"):GetAbsOrigin()
-		local unit1 = CreateUnitByName("dire_urs_exp", point1, true, nil, nil, DOTA_TEAM_NEUTRALS )      
-    end
+
 	
 	if killedUnit:GetUnitName() == "unit_giver_of_gold" or killedUnit:GetUnitName() == "unit_giver_of_gold_two" then
 		local messageinfo = { message = "Omg, you killed kenny! You bastards!", duration = 5}
@@ -573,15 +596,25 @@ function BA:OnHeroKilled (data)
 
 	local killedEntity = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	if killedEntity:GetNumItemsInInventory() ~=0 then
-	   for i=0,5 do
-			local item = killedEntity:GetItemInSlot(i);
-			if item ~= nil then
-				local position = killedEntity:GetAbsOrigin()
-				local name = item:GetAbilityName()
-				killedEntity:RemoveItem(item)		
-				BA:CreateDrop(name, position)
-			end
+
+	local item = killedEntity:GetItemInSlot(RandomInt(0, 5));
+	if item ~= nil then
+		local position = killedEntity:GetAbsOrigin()
+		local name = item:GetAbilityName()
+		killedEntity:RemoveItem(item)		
+		BA:CreateDrop(name, position)
+	end
+	
+	if RandomInt(1, 10) > 5 then	
+		local item2 = killedEntity:GetItemInSlot(RandomInt(0, 5));
+		if item2 ~= nil then
+			local position = killedEntity:GetAbsOrigin()
+			local name = item2:GetAbilityName()
+			killedEntity:RemoveItem(item2)		
+			BA:CreateDrop(name, position)
 		end
+	end	
+		
    end
 
    
@@ -593,6 +626,23 @@ function BA:OnHeroKilled (data)
 	--heroDie = 1
 	
 end
+
+   
+  function BA:RollDrops(unit)
+    local DropInfo = GameRules.DropTable[unit:GetUnitName()]
+    if DropInfo then
+        for item_name,chance in pairs(DropInfo) do
+            if RollPercentage(chance) then
+                -- Create the item
+                local item = CreateItem(item_name, nil, nil)
+                local pos = unit:GetAbsOrigin()
+                local drop = CreateItemOnPositionSync( pos, item )
+                local pos_launch = pos+RandomVector(RandomFloat(150,200))
+                item:LaunchLoot(false, 200, 0.75, pos_launch)
+            end
+        end
+    end
+end 
 
  
 function BA:CreateDrop (itemName, pos)
