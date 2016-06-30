@@ -18,6 +18,7 @@
 			"gold_attacker_modifier" //название параметра, он прицепляет эффект
 			{
 				"Passive" "1" //пассивный параметр
+				"IsHidden"      "1"				
 				"OnAttacked" //событие: когда этот параметр приходит в действие:
 				{
 					"RunScript"
@@ -45,6 +46,7 @@
 			"exp_attacker_modifier" //название параметра, он прицепляет эффект
 			{
 				"Passive" "1" //пассивный параметр
+				"IsHidden"      "1"					
 				"OnAttacked" //событие: когда этот параметр приходит в действие:
 				{
 					"RunScript"
@@ -93,8 +95,1237 @@
 			}			
 		}
 	}
+	
+	
+	"drow_ranger_marksmanship_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"drow_ranger_marksmanship"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
-
-
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"marksmanship_agility_bonus"	"40 60 80"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"split_count_scepter"			"2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_range"					"100"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_reduction_scepter"		"50"
+			}
+		}
+	}
 		
+	
+	
+
+	//=================================================================================================================
+	// ABILITY CHOISE FIRST STAGE
+	//=================================================================================================================
+	  "Blur"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"phantom_assassin_blur"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityBlur"			
+				}
+			
+		}
+	  }
+
+	  
+	  "DragonBlood"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"dragon_knight_dragon_blood"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityDragonBlood"			
+				}
+			
+		}
+	  }
+
+	  "Dispersion"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"spectre_dispersion"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityDispersion"			
+				}
+			
+		}
+	  }
+
+	  "Exterior"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"tiny_craggy_exterior"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityExterior"			
+				}
+			
+		}
+	  }
+	  
+	//=================================================================================================================
+	// ABILITY CHOISE SECOND STAGE
+	//=================================================================================================================
+	  
+	  "ShadowStrike"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"queenofpain_shadow_strike"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityShadowStrike"			
+				}
+			
+		}
+	  }
+
+	  "PhantomStrike"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"phantom_assassin_phantom_strike"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityPhantomStrike"			
+				}
+			
+		}
+	  }
+	  
+	  "WindWalk"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"clinkz_wind_walk"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityWindWalk"			
+				}
+			
+		}
+	  }	
+
+
+	  "DragonTail"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"dragon_knight_dragon_tail"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityDragonTail"			
+				}
+			
+		}
+	  }
+
+	  "BlinkStrike"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"riki_blink_strike"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityBlinkStrike"			
+				}
+			
+		}
+	  }	  
+
+	  "BerserkersCall"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"axe_berserkers_call"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityBerserkersCall"			
+				}
+			
+		}
+	  }	  
+	
+	  "ManaShield"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"medusa_mana_shield"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityManaShield"			
+				}
+			
+		}
+	  }	 
+
+	  "BerserkersCallD"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"axe_berserkers_call"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityBerserkersCallD"			
+				}
+			
+		}
+	  }
+
+	  "PhantomStrikeD"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"phantom_assassin_phantom_strike"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityPhantomStrikeD"			
+				}
+			
+		}
+	  }	  
+	  
+	  "StormBolt"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"sven_storm_bolt"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityStormBolt"			
+				}
+			
+		}
+	  }	  
+	  
+	  "BatteryAssault"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"rattletrap_battery_assault"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityBatteryAssault"			
+				}
+			
+		}
+	  }		  
+	  
+	  "OpenWounds"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"life_stealer_open_wounds"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityOpenWounds"			
+				}
+			
+		}
+	  }		  
+	  
+	  
+	//=================================================================================================================
+	// ABILITY CHOISE THIRD STAGE
+	//=================================================================================================================
+
+
+	  "PoisonSting"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"venomancer_poison_sting"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityPoisonSting"			
+				}
+			
+		}
+	  }
+
+	  "ViperNethertoxin"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"viper_nethertoxin"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityViperNethertoxin"			
+				}
+			
+		}
+	  }
+
+	  "Frostmourne"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"abaddon_frostmourne"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityFrostmourne"			
+				}
+			
+		}
+	  }	  
+	  
+	  
+	  "TimeLock"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"faceless_void_time_lock"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityTimeLock"			
+				}
+			
+		}
+	  }
+
+	  "ShurikenToss"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"bounty_hunter_shuriken_toss"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityShurikenToss"			
+				}
+			
+		}
+	  }
+
+	  "Jinada"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"bounty_hunter_jinada"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityJinada"			
+				}
+			
+		}
+	  }
+
+	  "Shukuchi"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"weaver_shukuchi"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityShukuchi"			
+				}
+			
+		}
+	  }
+
+	  
+	  "Totem"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"earthshaker_enchant_totem"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityTotem"			
+				}
+			
+		}
+	  }	
+
+	  "Invisibility"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"riki_permanent_invisibility"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityInvisibility"			
+				}
+			
+		}
+	  }	
+
+	  "EssenceShift"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"slark_essence_shift"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityEssenceShift"			
+				}
+			
+		}
+	  } 	  
+
+	  "CounterHelix"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"axe_counter_helix"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityCounterHelix"			
+				}
+			
+		}
+	  } 
+
+	  "MomentOfCourage"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"legion_commander_moment_of_courage"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityMomentOfCourage"			
+				}
+			
+		}
+	  } 
+
+	  "TimeLockD"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"faceless_void_time_lock"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityTimeLockD"			
+				}
+			
+		}
+	  }
+
+
+	  
+	  "TotemD"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"earthshaker_enchant_totem"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityTotemD"			
+				}
+			
+		}
+	  }		  
+	  
+	  "EssenceShiftD"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"slark_essence_shift"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityEssenceShiftD"			
+				}
+			
+		}
+	  } 	  
+	  
+	  "CounterHelixD"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"axe_counter_helix"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityCounterHelixD"			
+				}
+			
+		}
+	  }	  
+
+	  
+	  "MomentOfCourageD"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"legion_commander_moment_of_courage"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityMomentOfCourageD"			
+				}
+			
+		}
+	  } 	  
+	  
+	  
+	  "VampiricAura"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"skeleton_king_vampiric_aura"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityVampiricAura"			
+				}
+			
+		}
+	  }	  
+	  
+	  "Overpower"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"ursa_overpower"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityOverpower"			
+				}
+			
+		}
+	  }	
+
+	  "ManaBreak"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"antimage_mana_break"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityManaBreak"			
+				}
+			
+		}
+	  }  	  
+	  
+	  "PressTheAttack"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"legion_commander_press_the_attack"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityPressTheAttack"			
+				}
+			
+		}
+	  }	  
+
+	  "MomentOfCourageE"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"legion_commander_moment_of_courage"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityMomentOfCourageE"			
+				}
+			
+		}
+	  }
+
+	  "InnerBeast"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"beastmaster_inner_beast"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityInnerBeast"			
+				}
+			
+		}
+	  }
+
+	  "Rage"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"life_stealer_rage"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityRage"			
+				}
+			
+		}
+	  }		  
+	//=================================================================================================================
+	// ABILITY CHOISE END STAGE
+	//=================================================================================================================	  
+	  
+	  "CullingBlade"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"axe_culling_blade"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityCullingBlade"			
+				}
+			
+		}
+	  }	  
+
+	  "AmplifyDamage"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"slardar_amplify_damage"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityAmplifyDamage"			
+				}
+			
+		}
+	  }
+
+	  "Rupture"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"bloodseeker_rupture"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityRupture"			
+				}
+			
+		}
+	  }
+
+	  	  
+	  "Duel"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"legion_commander_duel"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityDuel"			
+				}
+			
+		}
+	  }
+
+
+	  "BattleTrance"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"troll_warlord_battle_trance"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityBattleTrance"			
+				}
+			
+		}
+	  }
+
+	  
+	  "CoupDeGrace"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"phantom_assassin_coup_de_grace"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityCoupDeGrace"			
+				}
+			
+		}
+	  }
+
+	  
+	  "PrimalRoar"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"beastmaster_primal_roar"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityPrimalRoar"			
+				}
+			
+		}
+	  }	
+
+	  
+	  "InsatiableHunger"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"broodmother_insatiable_hunger"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityInsatiableHunger"			
+				}
+			
+		}
+	  }	
+
+	  "ElderDragonForm"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"dragon_knight_elder_dragon_form"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityElderDragonForm"			
+				}
+			
+		}
+	  }	
+
+	  "Enrage"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"ursa_enrage"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityEnrage"			
+				}
+			
+		}
+	  }
+
+	  "Marksmanship"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"drow_ranger_marksmanship"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityMarksmanship"			
+				}
+			
+		}
+	  }
+
+	  "GodsStrength"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"sven_gods_strength"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityGodsStrength"			
+				}
+			
+		}
+	  }
+
+	  "BorrowedTime"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"abaddon_borrowed_time"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityBorrowedTime"			
+				}
+			
+		}
+	  }
+
+	  "Warpath"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"bristleback_warpath"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityWarpath"			
+				}
+			
+		}
+	  }	
+
+	  "Reincarnation"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"skeleton_king_reincarnation"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityReincarnation"			
+				}
+			
+		}
+	  }	 
+
+	  "Sunder"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"terrorblade_sunder"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilitySunder"			
+				}
+			
+		}
+	  }	 
+
+	  "ManaVoid"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"antimage_mana_void"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityManaVoid"			
+				}
+			
+		}
+	  }	
+
+	  "StoneGaze"
+	  {
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName"      	"medusa_stone_gaze"
+		"MaxLevel"            		"1"
+
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				
+		
+		"OnUpgrade"
+		{
+				"RunScript"
+				{
+					"ScriptFile"			"AbilityChoise.lua"
+					"Function"				"SetAbilityStoneGaze"			
+				}
+			
+		}
+	  }	  
 }

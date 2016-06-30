@@ -1,0 +1,341 @@
+"Bloodarena.Intro"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                              "value0"        "sounds/Intro.vsnd"
+                        }
+                    }
+					"volume_min"
+					{
+							"value"         "1.500000"
+					}
+					"volume_max"
+					{
+							"value"         "1.500000"
+					}
+					"pitch_min"
+					{
+							"value"         "0.950000"
+					}
+					"pitch_max"
+					{
+							"value"         "1.050000"
+					}
+					"chan_type"
+					{
+							"value"         "6"
+					}
+					"memory_type"
+					{
+							"value"         "0"
+					}
+					"soundlevel_min"
+					{
+							"value"         "100.000000"
+					}
+					"soundlevel_max"
+					{
+							"value"         "100.000000"
+					}
+                }
+            }
+        }
+    }
+}
+
+"Bloodarena.BattleFirst"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                              "value0"        "sounds/BattleFirst.vsnd"
+                        }
+                    }
+					"volume_min"
+					{
+							"value"         "1.500000"
+					}
+					"volume_max"
+					{
+							"value"         "1.500000"
+					}
+					"pitch_min"
+					{
+							"value"         "0.950000"
+					}
+					"pitch_max"
+					{
+							"value"         "1.050000"
+					}
+					"chan_type"
+					{
+							"value"         "6"
+					}
+					"memory_type"
+					{
+							"value"         "0"
+					}
+					"soundlevel_min"
+					{
+							"value"         "100.000000"
+					}
+					"soundlevel_max"
+					{
+							"value"         "100.000000"
+					}
+                }
+            }
+        }
+    }
+}
+
+"Bloodarena.BattleSecond"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                              "value0"        "sounds/BattleSecond.vsnd"
+                        }
+                    }
+					"volume_min"
+					{
+							"value"         "1.500000"
+					}
+					"volume_max"
+					{
+							"value"         "1.500000"
+					}
+					"pitch_min"
+					{
+							"value"         "0.950000"
+					}
+					"pitch_max"
+					{
+							"value"         "1.050000"
+					}
+					"chan_type"
+					{
+							"value"         "6"
+					}
+					"memory_type"
+					{
+							"value"         "0"
+					}
+					"soundlevel_min"
+					{
+							"value"         "100.000000"
+					}
+					"soundlevel_max"
+					{
+							"value"         "100.000000"
+					}
+                }
+            }
+        }
+    }
+}
+
+"Bloodarena.BattleThird"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                              "value0"        "sounds/BattleThird.vsnd"
+                        }
+                    }
+					"volume_min"
+					{
+							"value"         "1.500000"
+					}
+					"volume_max"
+					{
+							"value"         "1.500000"
+					}
+					"pitch_min"
+					{
+							"value"         "0.950000"
+					}
+					"pitch_max"
+					{
+							"value"         "1.050000"
+					}
+					"chan_type"
+					{
+							"value"         "6"
+					}
+					"memory_type"
+					{
+							"value"         "0"
+					}
+					"soundlevel_min"
+					{
+							"value"         "100.000000"
+					}
+					"soundlevel_max"
+					{
+							"value"         "100.000000"
+					}
+                }
+            }
+        }
+    }
+}
+
+"Bloodarena.BattleFourth"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                              "value0"        "sounds/BattleFourth.vsnd"
+                        }
+                    }
+					"volume_min"
+					{
+							"value"         "1.500000"
+					}
+					"volume_max"
+					{
+							"value"         "1.500000"
+					}
+					"pitch_min"
+					{
+							"value"         "0.950000"
+					}
+					"pitch_max"
+					{
+							"value"         "1.050000"
+					}
+					"chan_type"
+					{
+							"value"         "6"
+					}
+					"memory_type"
+					{
+							"value"         "0"
+					}
+					"soundlevel_min"
+					{
+							"value"         "100.000000"
+					}
+					"soundlevel_max"
+					{
+							"value"         "100.000000"
+					}
+                }
+            }
+        }
+    }
+}
+
+"Bloodarena.BattleFifth"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                              "value0"        "sounds/BattleFifth.vsnd"
+                        }
+                    }
+					"volume_min"
+					{
+							"value"         "1.500000"
+					}
+					"volume_max"
+					{
+							"value"         "1.500000"
+					}
+					"pitch_min"
+					{
+							"value"         "0.950000"
+					}
+					"pitch_max"
+					{
+							"value"         "1.050000"
+					}
+					"chan_type"
+					{
+							"value"         "6"
+					}
+					"memory_type"
+					{
+							"value"         "0"
+					}
+					"soundlevel_min"
+					{
+							"value"         "100.000000"
+					}
+					"soundlevel_max"
+					{
+							"value"         "100.000000"
+					}
+                }
+            }
+        }
+    }
+}

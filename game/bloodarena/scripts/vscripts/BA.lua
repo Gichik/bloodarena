@@ -38,8 +38,8 @@ function BA:InitGameMode()
 	GameRules:SetTimeOfDay( 0.5 )
 	GameRules:SetHeroRespawnEnabled( true )
 	GameRules:SetUseUniversalShopMode( true )
-	GameRules:SetHeroSelectionTime( 20.0 )
-	GameRules:SetPreGameTime( 20.0 )
+	GameRules:SetHeroSelectionTime( 10.0 )
+	GameRules:SetPreGameTime( 10.0 )
 	GameRules:SetPostGameTime( 60.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
 	GameRules:SetHeroMinimapIconScale( 0.7 )
@@ -133,7 +133,10 @@ end
 function BA:OnGameRulesStateChange(keys)
   local newState = GameRules:State_Get()
   if newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+  	ShowGenericPopup(  "#popup_title_Main", "#popup_body_Main", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
     BA:RunStages()
+	EmitGlobalSound("Bloodarena.Intro")
+	GameRules:SendCustomMessage("<font color='#58ACFA'>Tyler Bates - The Hot Gates</font>", 0, 0)	
   end
 end
 
@@ -145,19 +148,28 @@ print("RunStages Function")
 --first stages
 -------------------------------
 BA:MessageToStage(345)
+
+Timers:CreateTimer(345, function()
+EmitGlobalSound("Bloodarena.BattleFirst")
+GameRules:SendCustomMessage("<font color='#58ACFA'>Tyler Bates - The Hot Gates</font>", 0, 0)	
+return nil
+end)
+
 Timers:CreateTimer(360, function()
 		 
-	if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then
-		print("Run 1 Stage")				
+	if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then				
 		BA:GivePlayers()
 		playerGG1:SetAbsOrigin(pointRadArena1)
 		playerBG1:SetAbsOrigin(pointDireArena1)
-		print("players moved")
 		
 		Timers:CreateTimer(90, function()
-			print("return run")
-			BA:ReturnPlayersBack(1)
-			print("stage end")	
+			BA:ReturnPlayersBack(1)	
+			return nil
+		end)	
+
+		Timers:CreateTimer(100, function()
+			EmitGlobalSound("Bloodarena.Intro")
+			GameRules:SendCustomMessage("<font color='#58ACFA'>Tyler Bates - The Hot Gates</font>", 0, 0)	
 			return nil
 		end)		
 	
@@ -171,10 +183,16 @@ end)
 --second stages
 -------------------------------
 BA:MessageToStage(705)
+
+Timers:CreateTimer(715, function()
+EmitGlobalSound("Bloodarena.BattleSecond")
+GameRules:SendCustomMessage("<font color='#58ACFA'>Joseph LoDuca - Gannicus</font>", 0, 0)
+return nil
+end)
+
 Timers:CreateTimer(720, function()
 		 
-	if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) > 1 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) > 1 then
-		print("Run 2 Stage")	
+	if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) > 1 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) > 1 then	
 		BA:GivePlayers()
 		
 		if playerGG3 ~= nil then	
@@ -192,30 +210,28 @@ Timers:CreateTimer(720, function()
 			playerBG1:SetAbsOrigin(pointDireArena1)
 			playerBG2:SetAbsOrigin(pointDireArena2)
 		end		
-		
-	
-		print("players moved")		
+			
 		Timers:CreateTimer(90, function()
-			print("return run")
 			BA:ReturnPlayersBack(2)
-			print("stage end")	
 			return nil
 		end)		
 	
 	
-	elseif PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then
-		print("Run 2 1x1 Stage")				
+	elseif PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then			
 		BA:GivePlayers()
 		playerGG1:SetAbsOrigin(pointRadArena1)
 		playerBG1:SetAbsOrigin(pointDireArena1)
-		print("players moved")
 		
 		Timers:CreateTimer(90, function()
-			print("return run")
 			BA:ReturnPlayersBack(1)
-			print("stage end")	
 			return nil
-		end)			
+		end)	
+
+		Timers:CreateTimer(100, function()
+			EmitGlobalSound("Bloodarena.Intro")
+			GameRules:SendCustomMessage("<font color='#58ACFA'>Tyler Bates - The Hot Gates</font>", 0, 0)	
+			return nil
+		end)		
 	
 	end			
 	return nil
@@ -229,10 +245,16 @@ end)
 --third stages
 -------------------------------
 BA:MessageToStage(1065)
+
+Timers:CreateTimer(1065, function()
+EmitGlobalSound("Bloodarena.BattleThird")
+GameRules:SendCustomMessage("<font color='#58ACFA'>Joseph LoDuca - In The Arena </font>", 0, 0)
+return nil
+end)
+
 Timers:CreateTimer(1080, function()
 		 
 	if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) > 2 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) > 2 then
-		print("Run 3 Stage")	
 		BA:GivePlayers()
 
 		playerGG1:SetAbsOrigin(pointRadArena1)
@@ -243,17 +265,19 @@ Timers:CreateTimer(1080, function()
 		playerBG3:SetAbsOrigin(pointDireArena3)
 		playerBG2:SetAbsOrigin(pointDireArena2)
 
-
-		print("players moved")		
+	
 		Timers:CreateTimer(90, function()
-			print("return run")
-			BA:ReturnPlayersBack(3)
-			print("stage end")	
+			BA:ReturnPlayersBack(3)	
+			return nil
+		end)
+
+		Timers:CreateTimer(100, function()
+			EmitGlobalSound("Bloodarena.Intro")
+			GameRules:SendCustomMessage("<font color='#58ACFA'>Tyler Bates - The Hot Gates</font>", 0, 0)	
 			return nil
 		end)		
 	
-	elseif PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then
-		print("Run 3 1x1 Stage")				
+	elseif PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then				
 		BA:GivePlayers()
 		
 		if playerGG2 ~= nil then		
@@ -268,13 +292,8 @@ Timers:CreateTimer(1080, function()
 			playerBG1:SetAbsOrigin(pointDireArena1)
 		end
 		
-		
-		print("players moved")
-		
 		Timers:CreateTimer(90, function()
-			print("return run")
 			BA:ReturnPlayersBack(5)
-			print("stage end")	
 			return nil
 		end)
 		
@@ -288,10 +307,16 @@ end)
 --fourth stages
 -------------------------------
 BA:MessageToStage(1425)
+
+Timers:CreateTimer(1425, function()
+EmitGlobalSound("Bloodarena.BattleFourth")
+GameRules:SendCustomMessage("<font color='#58ACFA'>Tyler Bates - To Victory</font>", 0, 0)	
+return nil
+end)
+
 Timers:CreateTimer(1440, function()
 		 
 	if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) > 1 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) > 1 then
-		print("Run 4 Stage")	
 		BA:GivePlayers()
 		
 		if playerGG3 ~= nil then
@@ -310,29 +335,28 @@ Timers:CreateTimer(1440, function()
 			playerBG2:SetAbsOrigin(pointDireArena2)
 		end		
 		
-	
-		print("players moved")		
+		
 		Timers:CreateTimer(90, function()
-			print("return run")
-			BA:ReturnPlayersBack(4)
-			print("stage end")	
+			BA:ReturnPlayersBack(4)	
 			return nil
 		end)
 
 
-	elseif PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then
-		print("Run 2 1x1 Stage")				
+	elseif PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then				
 		BA:GivePlayers()
 		playerGG1:SetAbsOrigin(pointRadArena1)
 		playerBG1:SetAbsOrigin(pointDireArena1)
-		print("players moved")
 		
 		Timers:CreateTimer(90, function()
-			print("return run")
 			BA:ReturnPlayersBack(1)
-			print("stage end")	
 			return nil
-		end)			
+		end)
+
+		Timers:CreateTimer(100, function()
+			EmitGlobalSound("Bloodarena.Intro")
+			GameRules:SendCustomMessage("<font color='#58ACFA'>Tyler Bates - The Hot Gates</font>", 0, 0)	
+			return nil
+		end)		
 	
 	end			
 	return nil
@@ -344,15 +368,19 @@ end)
 --fifth stages
 -------------------------------
 BA:MessageToStage(1785)
+
+Timers:CreateTimer(1785, function()
+EmitGlobalSound("Bloodarena.BattleFifth")
+GameRules:SendCustomMessage("<font color='#58ACFA'>Spartacus tribute - we were gladiators </font>", 0, 0)
+return nil
+end)
+
 Timers:CreateTimer(1800, function()
 		 
 	if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) ~= 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) ~= 0 then
-		print("Run 5 Stage")
-
 			
 		BA:GivePlayers()
 
-		
 		if playerGG3 ~= nil then
 			playerGG3:SetAbsOrigin(pointRadArena3)
 		elseif 	playerGG2 ~= nil then	
@@ -369,13 +397,10 @@ Timers:CreateTimer(1800, function()
 			playerBG1:SetAbsOrigin(pointDireArena1)
 		end	
 								
-		print("players moved")
+
 		
 		Timers:CreateTimer(90, function()
-			print("return run")
 			BA:ReturnPlayersBack(5)
-			print("stage end")	
-
 			
 			print("killsGG:" .. PlayerResource:GetTeamKills(DOTA_TEAM_GOODGUYS) )
 			print("killsBG:" .. PlayerResource:GetTeamKills(DOTA_TEAM_BADGUYS) )
@@ -418,7 +443,6 @@ print("function GivePlayers")
 BA:setNillForHero()
 
 	for i = 0, 5 do
-		print("search players")
 		if PlayerResource:IsValidPlayer(i) then
 			print("player find")
 			local playerEntity = PlayerResource:GetSelectedHeroEntity(i)
